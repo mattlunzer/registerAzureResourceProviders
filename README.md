@@ -1,7 +1,7 @@
 # Register all Azure Resource Providers at once
 
 **Objective**</br>
-REgister all Azure Resource Providers in a given Azure Subscription.
+Register all Azure Resource Providers in a given Azure Subscription.
 
 Registering a resource provider configures your subscription to work with the resource provider. The scope for registration is always the subscription. By default, many resource providers are automatically registered. However, you may need to manually register some resource providers. To register a resource provider, you must have permission to perform the /register/action operation for the resource provider. This operation is included in the Subscription Contributor and Owner roles. 
 
