@@ -15,8 +15,7 @@ Note that You cannot unregister a resource provider when you still have resource
 **Caveat**
 Enable all Azure Resource Providers via this script is A) one-time operation. Newly created Resource Providers will NOT be automatically enabled without re-executing the script and B) enabling all Resource Providers will allow all resources to be provisioned without explcit registration of the necessary Resource Providers. Some may consider this a risk as resources may be provisioned that are considered undersirable by the business. 
 
-**Script**</br>
-Execute Script Below.
+**Script to enable all RPs**</br>
 <pre lang="...">
 #set variable and Get Azure Resource Provider list of objects that are not registered
 $rps = Get-AzResourceProvider -ListAvailable | Where-Object {$_.RegistrationState -eq 'NotRegistered'} | Select-Object ProviderNamespace
@@ -25,7 +24,7 @@ $rps = Get-AzResourceProvider -ListAvailable | Where-Object {$_.RegistrationStat
 ForEach ($rp in $rps) {Register-AzResourceProvider -ProviderNamespace $rp.ProviderNamespace}
 </pre>
 
-**Execute Get command to monitor registration status**</br>
+**Command to monitor registration status**</br>
 <pre lang="...">
 Get-AzResourceProvider -ListAvailable | select ProviderNamespace, RegistrationState
 </pre>
