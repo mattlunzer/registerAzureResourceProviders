@@ -24,3 +24,8 @@ $rps = Get-AzResourceProvider -ListAvailable | Where-Object {$_.RegistrationStat
 #Execute For Each loop to process through results from Get command and register Resource Providers
 ForEach ($rp in $rps) {Register-AzResourceProvider -ProviderNamespace $rp.ProviderNamespace}
 </pre>
+
+**Execute Get command to monitor registration status**</br>
+<pre lang="...">
+Get-AzResourceProvider -ListAvailable | select ProviderNamespace, RegistrationState
+</pre>
