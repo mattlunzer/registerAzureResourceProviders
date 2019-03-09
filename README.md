@@ -10,12 +10,12 @@ Note that You cannot unregister a resource provider when you still have resource
 **Requirements:**
 - The security principal that executes this script must be in a Azure Subscription Owner or Contributor role
 - This script assumes you have the Azure PowerShell AZ cmdlets installed. More information here https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az?view=azps-1.4.0
-- The script assumes you have are authenticated
+- The script assumes you are authenticated
 
 **Caveat**
 Enable all Azure Resource Providers via this script is A) one-time operation. Newly created Resource Providers will NOT be automatically enabled without re-executing the script and B) enabling all Resource Providers will allow all resources to be provisioned without explcit registration of the necessary Resource Providers. Some may consider this a risk as resources may be provisioned that are considered undersirable by the business. 
 
-**Script**
+**Script**</br>
 Execute Script Below.
 <pre lang="...">
 #set variable and Get Azure Resource Provider list of objects that are not registered
